@@ -1,0 +1,3 @@
+---
+- name: service stop
+  service: name= ['nginx', 'php7.0-fpm', 'mysql'] state= s
