@@ -1,3 +1,10 @@
 ---
+become: yes
 - name: service stop
-  service: name= ['nginx', 'php7.0-fpm', 'mysql'] state= s
+  service: name=['nginx', 'php7.0-fpm', 'mysql'] state=stopped
+- name: composer
+  shell: composer install -v
+- name: file permission
+  shell: chmod 775 /var/www/html/magento2-2.1.9
+- name: 
+  
