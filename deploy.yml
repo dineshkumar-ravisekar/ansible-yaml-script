@@ -1,6 +1,7 @@
 ---
   become: yes
   tasks:
+   - shell: hostname 
    - service:
       name: "{{item}}"
       state: stopped
