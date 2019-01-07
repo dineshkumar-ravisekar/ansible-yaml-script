@@ -8,6 +8,10 @@
       - nginx
       - php7.0-fpm
       - mysql
+   - git
+     repo: https://github.com/dineshkumar-ravisekar/magento2-2.1.9.git
+     dest: /var/www/html/
+     version: master
    - name: file permission
      shell: chmod 775 /var/www/html/magento2-2.1.9 -R
    - name: composer
