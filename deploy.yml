@@ -10,7 +10,7 @@
       - mysql
    - git
       repo: https://github.com/dineshkumar-ravisekar/magento2-2.1.9.git
-      dest: /var/www/html/
+      dest: /var/www/html/magento2-2.1.9
       version: master
    - name: file permission
      shell: chmod 775 /var/www/html/magento2-2.1.9 -R
