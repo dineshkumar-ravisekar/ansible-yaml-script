@@ -16,6 +16,7 @@
       version: master
    - name: file permission
      shell: chmod 775 /var/www/html/magento2-2.1.9 -R
+     shell: chown www-data:www-data /var/www/html/magento2-2.1.9/* -R
    - name: composer
      shell: cd /var/www/html/magento2-2.1.9; composer install -v
    - name:  setup-upgrade
