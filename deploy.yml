@@ -1,22 +1,22 @@
 ---
- become: yes
- tasks:
- - service:
+  become: yes
+  tasks:
+   - service:
       name: "{{item}}"
       state: stopped
-   with_items:
-    - nginx
-    - php7.0-fpm
-    - mysql
- -  name: file permission
-   shell: chmod 775 /var/www/html/magento2-2.1.9 -R
- - name: composer
-   shell: cd /var/www/html/magento2-2.1.9; composer install -v
- - name:  setup-upgrade
-   shell: php bin/magento setup:upgrade
- - name: compile
-   shell: php bin/magento setup:di:compile
- - name: deploy
-   shell: php bin/magento setup:static-content:deploy
- - name: ownership
-   shell: chown www-data:www-data /var/www/html/magento2-2.1.9/* -R
+     with_items:
+      - nginx
+      - php7.0-fpm
+      - mysql
+   - name: file permission
+     shell: chmod 775 /var/www/html/magento2-2.1.9 -R
+   - name: composer
+     shell: cd /var/www/html/magento2-2.1.9; composer install -v
+   - name:  setup-upgrade
+     shell: php bin/magento setup:upgrade
+   - name: compile
+     shell: php bin/magento setup:di:compile
+   - name: deploy
+     shell: php bin/magento setup:static-content:deploy
+   - name: ownership
+     shell: chown www-data:www-data /var/www/html/magento2-2.1.9/* -R
