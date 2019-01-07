@@ -1,4 +1,5 @@
 ---
+- hosts: Web
   become: yes
   tasks:
    - shell: hostname 
